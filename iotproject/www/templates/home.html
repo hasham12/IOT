@@ -1,0 +1,25 @@
+<ion-view view-title="Home">
+    <ion-content ng-class="{expanded:$scope.isExpanded}">
+        <div class="tabs tabs-dark tabs-icon-top static">
+            <a ui-sref="app.home" class="tab-item active">
+                <i class="icon ion-cloud"></i> APPLIANCE
+            </a>
+            <a ui-sref="app.sensor" class="tab-item">
+                <i class="icon ion-thermometer"></i> SENSORS
+            </a>
+            <a ui-sref="app.bill" class="tab-item">
+                <i class="icon ion-cloud"></i>BILL
+            </a>
+        </div>
+
+        <h4 class="content padding double-padding-x">APPLIANCE BUTTONS</h4>
+        <div class="list">
+            <div class="item item-avatar item-icon-right" ng-repeat="item in gpio.PiValues.pins" ng-if="item != null">
+                <img src="img/logo.png">
+                <h2>{{item.name}}</h2>
+                <ion-toggle ng-checked="item.checked" ng-click="submit(item)" > {{item.text}} </ion-toggle>
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>

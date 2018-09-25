@@ -1,0 +1,75 @@
+<ion-view view-title="Home">
+    <ion-content ng-class="{expanded:$scope.isExpanded}">
+        <div class="tabs tabs-dark tabs-icon-top static">
+            <a ui-sref="app.home" class="tab-item ">
+                <i class="icon ion-cloud"></i> APPLIANCE
+            </a>
+            <a ui-sref="app.sensor" class="tab-item">
+                <i class="icon ion-cloud"></i> SENSORS
+            </a>
+            <a ui-sref="app.bill" class="tab-item active">
+                <i class="icon ion-cloud"></i>BILL
+            </a>
+        </div>
+
+        <h4 class="content padding double-padding-x">Bill Information</h4>
+        <div class="list ">
+            Socket 1 Details
+            <div class="item item-avatar item-icon-right"  >
+                <h2><strong>{{((current1)) | number : 3}}</strong> current </h2>
+            </div>
+            <div class="item item-avatar item-icon-right"  >
+                <h2><strong>{{ (220 * (current1)) / 1000 | number : 3}}</strong> kW</h2>
+            </div>
+            <div class="item item-avatar item-icon-right"  >
+                <h2><strong>{{ ((220 * (current1)) * 1/ 1000 ) * 9| number : 1}}</strong> Per Hour  bill Consumption</h2>
+            </div>
+            <div class="item item-avatar item-icon-right"  >
+                <h2><strong>{{ ((220 * (current1)) * (24 * 30)/ 1000 ) * 9| number : 0}}</strong> Per Month  bill Consumption</h2>
+            </div>
+        </div>
+        <div class="list ">
+            Socket 2 Details
+            <div class="item item-avatar item-icon-right"  >
+                <h2><strong>{{((current2)) | number : 3}}</strong> current </h2>
+            </div>
+            <div class="item item-avatar item-icon-right"  >
+                <h2><strong>{{ (220 * (current2)) / 1000 | number : 3}}</strong> kW</h2>
+            </div>
+              <div class="item item-avatar item-icon-right"  >
+                <h2><strong>{{ ((220 * (current2)) * 1/ 1000 ) * 9| number : 1}}</strong> Per Hour  bill Consumption</h2>
+            </div>
+            <div class="item item-avatar item-icon-right"  >
+                <h2><strong>{{ ((220 * (current2)) * (24 * 30)/ 1000 ) * 9| number : 0}}</strong> Per Month  bill Consumption</h2>
+            </div>
+        </div>
+          <div class="list ">
+            Socket 3 Details
+            <div class="item item-avatar item-icon-right"  >
+                <h2><strong>0.00</strong> current </h2>
+            </div>
+            <div class="item item-avatar item-icon-right"  >
+                <h2><strong>{{ (220 * (0)) / 1000 | number : 3}}</strong> kW</h2>
+            </div>
+              <div class="item item-avatar item-icon-right"  >
+                <h2><strong>{{ ((220 * (0)) * 1/ 1000 ) * 9| number : 1}}</strong> Per Hour  bill Consumption</h2>
+            </div>
+            <div class="item item-avatar item-icon-right"  >
+                <h2><strong>{{ ((220 * (0)) * (24 * 30)/ 1000 ) * 9| number : 0}}</strong> Per Month  bill Consumption</h2>
+            </div>
+        </div>
+        <div class="list ">
+            Total Average Sockets Details
+            <div class="item item-avatar item-icon-right"  >
+                <h2><strong>{{((current1 + current2) / 2) | number : 3}}</strong> current </h2>
+            </div>
+            <div class="item item-avatar item-icon-right"  >
+                <h2><strong>{{ (220 * (current1 + current2) / 2) / 1000 | number : 3}}</strong> kW</h2>
+            </div>
+            <div class="item item-avatar item-icon-right"  >
+                <h2><strong>{{ (220 * (current1 + current2) / 2) * (24 * 30 * 9) / 1000 | number : 0}}</strong> Total Per Month Bill Consumption</h2>
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>

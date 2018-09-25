@@ -1,0 +1,24 @@
+<ion-view view-title="Home - Tesseract">
+    <ion-content ng-class="{expanded:$scope.isExpanded}">
+        <div class="tabs tabs-dark tabs-icon-top static">
+            <a ui-sref="app.home" class="tab-item ">
+                <i class="icon ion-cloud"></i> GPIO
+            </a>
+            <a ui-sref="app.sensor" class="tab-item">
+                <i class="icon ion-thermometer"></i> SENSORS
+            </a>
+            <a ui-sref="app.tesseract" class="tab-item active">
+                <i class="icon ion-battery-charging"></i> TESSERACT
+            </a>
+        </div>
+
+        <h4 class="content padding double-padding-x">GPIO BUTTONS</h4>
+        <div class="list ">
+            <div class="item item-avatar item-icon-right" ng-repeat="item in gpio">
+                <img src="img/logo.png">
+                <h2>Enable Pin {{item.id}}</h2>
+                <ion-toggle ng-checked="item.checked" > {{item.text}} </ion-toggle>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

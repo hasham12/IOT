@@ -1,0 +1,40 @@
+<ion-view view-title="Home">
+    <ion-content ng-class="{expanded:$scope.isExpanded}">
+        <div class="tabs tabs-dark tabs-icon-top static">
+            <a ui-sref="app.home" class="tab-item ">
+                <i class="icon ion-cloud"></i> APPLIANCE
+            </a>
+            <a ui-sref="app.sensor" class="tab-item active">
+                <i class="icon ion-thermometer"></i> SENSORS
+            </a>
+            <a ui-sref="app.bill" class="tab-item">
+                <i class="icon ion-cloud"></i>BILL
+            </a>
+        </div>
+
+        <h4 class="content padding double-padding-x">Zone Information</h4>
+        <div class="list ">
+            <div class="item item-avatar item-icon-right"  >
+                <img src="img/logo.png">
+                <h2>Temperature</h2>
+                <h2> {{weather[0]}} </h2>
+            </div>
+            <div class="item item-avatar item-icon-right"  >
+                <img src="img/logo.png">
+                <h2>Humidty</h2>
+                <h2> {{weather[2]}} </h2>
+            </div>
+            <div class="item item-avatar item-icon-right">
+                <img src="img/logo.png">
+                <h2>Intruder Detection</h2>
+                <h2> {{intruder}}</h2>
+            </div>
+            <div class="item item-avatar item-icon-right">
+                <img src="img/logo.png">
+                <h2>Smoke Measure</h2>
+                <h2>{{gas}}</h2>
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>
